@@ -6,6 +6,7 @@ import { UsersService } from 'src/app/services/users.service';
 import { HotToastService } from '@ngneat/hot-toast';
 import {switchMap,Observable} from 'rxjs';
 import {SaveService} from 'src/app/services/save.service';
+import{Meta} from '@angular/platform-browser';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -22,11 +23,18 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private toast: HotToastService,
     private us:UsersService,
-     private ss:SaveService
+     private ss:SaveService,
+     private meta:Meta
   ) {
   }
 
-  ngOnInit(): void {}
+  ngOnInit() {
+  this.meta.updateTag(
+  {name:'theme-color',content:'#90ee90'},
+  {name:'Description',content:'Login to talk with harihar nautiyal. A superfast application can also work in 2G speed. Served by harihar creations.'}
+  );
+
+  }
 
   get email() {
     return this.loginForm.get('email');

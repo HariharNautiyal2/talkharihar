@@ -1,3 +1,12 @@
+# angular cache
+.angular/
+.github/
+.vscode/
+.gitignore
+.firebaserc
+.editorconfig
+.browserslistrc
+public/
 # Logs
 logs
 *.log
