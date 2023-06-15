@@ -6,6 +6,7 @@ import { HotToastService } from '@ngneat/hot-toast';
 import {WebcamImage, WebcamInitError, WebcamUtil} from 'ngx-webcam';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import {MatBottomSheetRef} from '@angular/material/bottom-sheet';
+import{Meta} from '@angular/platform-browser';
 import {
   combineLatest,
   map,
@@ -55,7 +56,8 @@ id:string;
     public s:SaveService,
     private imageUploadService:ImageUploadService,
     private toast:HotToastService,
-    private bs:MatBottomSheet
+    private bs:MatBottomSheet,
+         private meta:Meta
   ) {
         if (this.flag) {
       // Enabling Animation
@@ -66,6 +68,7 @@ id:string;
 
 
   ngOnInit(): void {
+       this.meta.updateTag({ name: 'theme-color', content: '#07baff' });
 
 let uid=localStorage.getItem('uid') || "";
       if(uid != null){

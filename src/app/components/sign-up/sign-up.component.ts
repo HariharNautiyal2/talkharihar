@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import{Meta} from '@angular/platform-browser';
 import {
   AbstractControl,
   FormControl,
@@ -49,12 +50,16 @@ export class SignUpComponent implements OnInit {
     private toast: HotToastService,
     private router: Router,
     private usersService: UsersService,
-    private ss:SaveService
+    private ss:SaveService,
+      private meta:Meta
   ) {
 
   }
 
-  ngOnInit(): void {}
+  ngOnInit(){
+        this.meta.updateTag({ name: 'theme-color', content: '#90ee90' });
+  this.meta.updateTag({ name: 'Description', content: 'Sign Up to talk with harihar nautiyal. A superfast application can also work in 2G speed. Served by harihar creations.' });
+  }
 
   get name() {
     return this.signUpForm.get('name');

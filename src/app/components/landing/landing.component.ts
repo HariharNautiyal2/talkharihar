@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
 import { switchMap ,Observable} from 'rxjs';
 import {SaveService} from 'src/app/services/save.service';
+import{Meta} from '@angular/platform-browser';
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
@@ -17,11 +18,12 @@ export class LandingComponent implements OnInit {
    private usersService:UsersService,
    private toast:HotToastService,
    private router:Router,
-   private ss:SaveService
+   private ss:SaveService,
+      private meta:Meta
   ) {}
 
-  ngOnInit(): void {
-
+  ngOnInit(){
+ this.meta.updateTag({ name: 'theme-color', content: '#000000' });
   }
   sd(){}
             check_sd(uid:any,email:any,displayName:any,photoURL:any) : Observable<any> {

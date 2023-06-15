@@ -28,13 +28,11 @@ export class LoginComponent implements OnInit {
   ) {
   }
 
-  ngOnInit() {
-  this.meta.updateTag(
-  {name:'theme-color',content:'#90ee90'},
-  {name:'Description',content:'Login to talk with harihar nautiyal. A superfast application can also work in 2G speed. Served by harihar creations.'}
-  );
+ngOnInit() {
+  this.meta.updateTag({ name: 'theme-color', content: '#90ee90' });
+  this.meta.updateTag({ name: 'Description', content: 'Login to talk with harihar nautiyal. A superfast application can also work in 2G speed. Served by harihar creations.' });
+}
 
-  }
 
   get email() {
     return this.loginForm.get('email');
