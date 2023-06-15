@@ -1,0 +1,37 @@
+<div class="form-container">
+
+    <div class="icon-hn"><div class="quest"></div></div>
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+        <mat-form-field appearance="legacy">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Your email" formControlName="email" />
+            <mat-icon svgIcon="mail-circle" matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-error *ngIf="email?.errors?.['required']">
+                Email is required
+            </mat-error>
+            <mat-error *ngIf="email?.errors?.['email']">
+                Please enter a correct email format
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="legacy">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Password" formControlName="password" type="password" />
+            <mat-icon svgIcon="lock-circle" matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-error *ngIf="password?.errors?.['required']">
+                Password is required
+            </mat-error>
+        </mat-form-field>
+        <div class="center margin-top"> 
+            <button class="btn r" routerLink="/sign-up"  type="button">New User</button>
+            <button class="btn s" type="submit">
+               Let me come
+            </button>
+            
+        </div>
+             <button class="btn g" type="button" (click)="google()">
+                Continue with google
+            </button>
+    </form>
+
+</div>
+

@@ -1,0 +1,50 @@
+<div class="form-container mat-elevation-z5">
+    <div class="icon-hn"><div class=" add"></div></div>
+    <form [formGroup]="signUpForm" (ngSubmit)="submit()">
+        <mat-form-field appearance="legacy">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Your Name" formControlName="name" />
+            <mat-icon svgIcon="user-circle" matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="legacy">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Your Email" formControlName="email" />
+            <mat-icon svgIcon="mail-circle" matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-error *ngIf="email?.errors?.['required']">
+                Email is required
+            </mat-error>
+            <mat-error *ngIf="email?.errors?.['email']">
+                Please enter a correct email format
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="legacy">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Your Password" minlength="6" formControlName="password" type="password" />
+            <mat-icon svgIcon="lock-circle" matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-error *ngIf="password?.errors?.['required']">
+                Password is required
+            </mat-error>
+
+        </mat-form-field>
+        <mat-form-field appearance="legacy">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput placeholder="Confirm it" formControlName="confirmPassword" type="password" />
+            <mat-icon svgIcon="tick-circle" matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-error *ngIf="confirmPassword?.errors?.['required']">
+                Confirm Password is required
+            </mat-error>
+        </mat-form-field>
+        <mat-error *ngIf="signUpForm.errors?.['passwordsDontMatch']">
+            Passwords should match
+        </mat-error>
+        <div class="center margin-top">
+            <button class="btn r" routerLink="/login" type="button">Old User</button>
+            <button class="btn s" type="submit">
+                Let's go
+            </button>
+        </div>
+             <button class="btn g" type="button" (click)="google()">
+            Continue with google
+            </button>
+    </form>
+</div>

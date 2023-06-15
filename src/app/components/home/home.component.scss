@@ -1,0 +1,47 @@
+                                                   .name{
+                               transform: translate(-3px,7px) !important;
+                                   color: #90ee90 !important;
+                                   
+                               }
+.viwed-list{
+    display: flex;
+height: 1em;
+    
+position: absolute;
+right: 0;
+    bottom: 0;
+    transform: translate(-55px,-30px);
+    #viwed{
+        height:1em;
+        width: 1em;
+        object-fit: cover;
+        border: 2px solid #383f44;
+        transform: none;
+        border-radius: 100%;
+        margin-right: 3px;
+        margin-left: 3px;
+        
+    }
+}
+.sender .viwed-list{
+    display: flex;
+height: 1em;
+    
+position: absolute;
+left: 0;
+    bottom: 0;
+    transform: translate(55px,-30px);
+    #viwed{
+        height:1em;
+        width: 1em;
+        object-fit: cover;
+        border: 2px solid #90ee90;
+        transform: none;
+        border-radius: 100%;
+        margin-right: 3px;
+        margin-left: 3px;
+        
+    }
+}
+
+
